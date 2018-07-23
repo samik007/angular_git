@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 
 import { Recipe } from "./recipes.model";
 import { Ingredient } from "../shared/ingredient.model";
@@ -6,12 +6,11 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService{
-    recipeSelected = new EventEmitter<Recipe>();
 
     private recipes: Recipe[] = [
         new Recipe(
-            'test recipe1', 
-            'test1',
+            'Chicken Roll', 
+            'This is the description for chicken roll',
             'http://survival-mastery.com/wp-content/uploads/2015/03/Camping-Food-Idea-810x518.jpg',
             [
                 new Ingredient('Meat', 1),
@@ -19,8 +18,8 @@ export class RecipeService{
             ]
         ),
         new Recipe(
-            'test recipe2', 
-            'test2', 
+            'Egg Roll', 
+            'This is the description for egg roll',
             'http://survival-mastery.com/wp-content/uploads/2015/03/Camping-Food-Idea-810x518.jpg',
             [
                 new Ingredient('Meat', 1),
@@ -33,6 +32,10 @@ export class RecipeService{
     
     getRecipes(){
         return this.recipes.slice();
+    }
+
+    getRecipe(index: number){
+        return this.recipes[index];
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]){
