@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AgWordCloudModule } from 'angular4-word-cloud';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -40,7 +41,8 @@ import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component
     ReactiveFormsModule,
     AppRoutingModule,
     HttpModule,
-    AgWordCloudModule.forRoot()
+    AgWordCloudModule.forRoot(),
+    ChartsModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService],
   bootstrap: [AppComponent]

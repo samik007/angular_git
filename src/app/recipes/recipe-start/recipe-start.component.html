@@ -1,8 +1,27 @@
 <h3> Please select a Recipe! </h3>
 
+<div AgWordCloud [wordData]="wordData" [options]="options"></div>
 
-<div AgWordCloud 
-    #word_cloud_chart=ag-word-cloud 
-    [wordData]="word_cloud" 
-    [options]="options">
+<hr>
+
+<div style="display: block">
+    <canvas baseChart 
+            [data]="pieChartData" 
+            [labels]="pieChartLabels" 
+            [chartType]="pieChartType" 
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
 </div>
+
+<hr>
+
+<div style="display: block">
+    <canvas baseChart
+            [datasets]="radarChartData"
+            [labels]="radarChartLabels"
+            [chartType]="radarChartType"
+            (chartHover)="radarChartHovered($event)"
+            (chartClick)="radarChartClicked($event)"></canvas>
+</div>
+
+<hr>
