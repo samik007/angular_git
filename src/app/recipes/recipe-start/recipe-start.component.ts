@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AgWordCloudData } from 'angular4-word-cloud';
 
 @Component({
   selector: 'app-recipe-start',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-start.component.css']
 })
 export class RecipeStartComponent implements OnInit {
+  wordData: AgWordCloudData[
+    
+  ];
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
